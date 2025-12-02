@@ -107,13 +107,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="challenge-overview" class="level2">
 <h2 class="anchored" data-anchor-id="challenge-overview">Challenge Overview</h2>
 <p><strong>Your Mission:</strong> Create a concise, punchy Quarto document (aim for 1-5 printed pages) that analyzes historical productivity data from Patrick’s auto shop network. Your report should give Patrick clear, actionable recommendations he can understand and use. Write it so an auto-mechanic can follow it—no jargon, no confusion, no boredom. Then render the document to HTML and deploy it via GitHub Pages.</p>
-<p><strong>Key Requirements:</strong> - <strong>Simplicity:</strong> Patrick is an auto-mechanic, not a statistician. Write so he can understand. - <strong>Conciseness:</strong> 1-5 printed pages. Get to the point. - <strong>Beautiful visualizations:</strong> Show all 250 data points clearly. - <strong>Logical recommendations:</strong> Defensible advice based on the data. - <strong>Confidence assessment:</strong> Explain uncertainty in plain terms. We only have 250 days of data—that’s not a lot. Help Patrick understand what ranges of differences he can expect.</p>
+<p><strong>Key Requirements:</strong></p>
+<ul>
+<li><strong>Simplicity:</strong> Patrick is an auto-mechanic, not a statistician. Write so he can understand.</li>
+<li><strong>Conciseness:</strong> 1-5 printed pages. Get to the point.</li>
+<li><strong>Beautiful visualizations:</strong> Show all 250 data points clearly.</li>
+<li><strong>Logical recommendations:</strong> Defensible advice based on the data.</li>
+<li><strong>Confidence assessment:</strong> Explain uncertainty in plain terms. We only have 250 days of data—that’s not a lot. Help Patrick understand what ranges of differences he can expect.</li>
+</ul>
 </section>
 <section id="the-business-problem" class="level2">
 <h2 class="anchored" data-anchor-id="the-business-problem">The Business Problem 🎯</h2>
 <p>Patrick runs a network of 5 auto repair shops. He’s been tracking productivity data (number of cars fixed per day) across all shops, along with whether he (the boss) was present at each shop on each day.</p>
 <p><strong>The Core Question:</strong> When and where should Patrick schedule his presence to maximize productivity and revenue?</p>
-<p><strong>Key Considerations:</strong> - Patrick can only be at one shop per day - Different shops may respond differently to his presence - Revenue depends on number of cars fixed (assume a fixed price per car) - Historical patterns may not predict future performance perfectly - Patrick loves visiting his brother who runs Shop 3</p>
+<p><strong>Key Considerations:</strong></p>
+<ul>
+<li>Patrick can only be at one shop per day</li>
+<li>Different shops may respond differently to his presence</li>
+<li>Revenue depends on number of cars fixed (assume a fixed price per car)</li>
+<li>Historical patterns may not predict future performance perfectly</li>
+<li>Patrick loves visiting his brother who runs Shop 3</li>
+</ul>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -124,13 +138,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>The problem:</strong> Patrick needs to make scheduling decisions based on data, not intuition. He needs to understand: - Which shops benefit most from his presence? - Are there patterns by shop that suggest different strategies? - What are the revenue and profit implications of different scheduling scenarios? - How confident can he be in these recommendations?</p>
-<p><strong>Why this matters:</strong> Poor scheduling decisions can lead to: - Wasted time (Patrick at shops that don’t need him) - Lost revenue (shops that need him but don’t get him)</p>
+<p><strong>The problem:</strong> Patrick needs to make scheduling decisions based on data, not intuition. He needs to understand:</p>
+<ul>
+<li>Which shops benefit most from his presence?</li>
+<li>Are there patterns by shop that suggest different strategies?</li>
+<li>What are the revenue and profit implications of different scheduling scenarios?</li>
+<li>How confident can he be in these recommendations?</li>
+</ul>
+<p><strong>Why this matters:</strong> Poor scheduling decisions can lead to:</p>
+<ul>
+<li>Wasted time (Patrick at shops that don’t need him)</li>
+<li>Lost revenue (shops that need him but don’t get him)</li>
+</ul>
 <p><strong>The connection:</strong> This is a real-world decision problem where data analysis can directly impact business outcomes. Your job is to make the data tell a clear, actionable story.</p>
 </div>
 </div>
-<section id="the-data" class="level3">
-<h3 class="anchored" data-anchor-id="the-data">The Data</h3>
+</section>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The Data 📊</h2>
 <p>The dataset contains 250 observations of daily productivity across 5 shops:</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>carsDF.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -234,7 +259,13 @@ Table&nbsp;1: Overview of the productivity data
 </figure>
 </div>
 </div>
-<p><strong>Data Dictionary:</strong> - <code>observation</code>: Observation number (1-250) - <code>shopID</code>: Shop identifier (1-5) - <code>boss</code>: Binary indicator (0 = boss absent, 1 = boss present) - <code>carsFixed</code>: Number of cars fixed that day</p>
+<p><strong>Data Dictionary:</strong></p>
+<ul>
+<li><code>observation</code>: Observation number (1-250)</li>
+<li><code>shopID</code>: Shop identifier (1-5)</li>
+<li><code>boss</code>: Binary indicator (0 = boss absent, 1 = boss present)</li>
+<li><code>carsFixed</code>: Number of cars fixed that day</li>
+</ul>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> carsDF.groupby([<span class="st">'shopID'</span>, <span class="st">'boss'</span>])[<span class="st">'carsFixed'</span>].agg([<span class="st">'count'</span>, <span class="st">'mean'</span>, <span class="st">'std'</span>, <span class="st">'min'</span>, <span class="st">'max'</span>]).<span class="bu">round</span>(<span class="dv">2</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -365,7 +396,6 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 </div>
 </div>
 </section>
-</section>
 <section id="challenge-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="challenge-requirements">Challenge Requirements 📋</h2>
 <section id="minimum-requirements-for-any-points-on-challenge" class="level3">
@@ -415,7 +445,13 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Benefits:</strong> - <strong>Real-world application:</strong> You’re solving an actual business problem - <strong>Data-driven insights:</strong> Learn to extract actionable insights from data - <strong>Professional presentation:</strong> Create a report that a real client would use - <strong>Visual storytelling:</strong> Master the art of data visualization for decision-making</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li><strong>Real-world application:</strong> You’re solving an actual business problem</li>
+<li><strong>Data-driven insights:</strong> Learn to extract actionable insights from data</li>
+<li><strong>Professional presentation:</strong> Create a report that a real client would use</li>
+<li><strong>Visual storytelling:</strong> Master the art of data visualization for decision-making</li>
+</ul>
 </div>
 </div>
 </section>
@@ -432,8 +468,21 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>This is a report for Patrick, an auto-mechanic, not a statistics professor.</strong> Your job is to give him clear, actionable advice he can understand and use. Think of this as a brief consultation report—something he can read in 5 minutes and immediately know what to do.</p>
-<p><strong>Report Format:</strong> - <strong>Conciseness:</strong> Aim for 1-5 printed pages. Patrick is busy—get to the point quickly. - <strong>Simplicity:</strong> Write so an auto-mechanic can understand. Avoid jargon. Use plain language. - <strong>Delete All Challenge Instructions:</strong> Once you’ve completed your analysis, remove all challenge instructions, setup guides, and grading rubrics from your final rendered HTML. The final report should contain only your analysis, visualizations, and recommendations—nothing else. - <strong>Hidden Code:</strong> Tell a narrative and visual story, but hide your code (the code can be referenced in your github *.qmd source file if needed). - <strong>Show All Data Points:</strong> When plotting historical data, display all 250 observations (not just summaries). Use transparency, jitter, or other techniques to handle overlapping points.</p>
-<p><strong>What makes a great report:</strong> - <strong>Beautiful visualizations:</strong> Clean, clear charts that tell the story at a glance - <strong>Logical recommendations:</strong> Defensible advice based on the data, not speculation - <strong>Confidence assessment:</strong> Explain uncertainty in plain terms. What ranges of differences can Patrick expect? How confident can he be? (Remember: we only have 250 days of data—that’s not a lot.) - <strong>Punchy and focused:</strong> Don’t bore Patrick with unnecessary analysis. Focus on what matters for his decision.</p>
+<p><strong>Report Format:</strong></p>
+<ul>
+<li><strong>Conciseness:</strong> Aim for 1-5 printed pages. Patrick is busy—get to the point quickly.</li>
+<li><strong>Simplicity:</strong> Write so an auto-mechanic can understand. Avoid jargon. Use plain language.</li>
+<li><strong>Delete All Challenge Instructions:</strong> Once you’ve completed your analysis, remove all challenge instructions, setup guides, and grading rubrics from your final rendered HTML. The final report should contain only your analysis, visualizations, and recommendations—nothing else.</li>
+<li><strong>Hidden Code:</strong> Tell a narrative and visual story, but hide your code (the code can be referenced in your github *.qmd source file if needed).</li>
+<li><strong>Show All Data Points:</strong> When plotting historical data, display all 250 observations (not just summaries). Use transparency, jitter, or other techniques to handle overlapping points.</li>
+</ul>
+<p><strong>What makes a great report:</strong></p>
+<ul>
+<li><strong>Beautiful visualizations:</strong> Clean, clear charts that tell the story at a glance</li>
+<li><strong>Logical recommendations:</strong> Defensible advice based on the data, not speculation</li>
+<li><strong>Confidence assessment:</strong> Explain uncertainty in plain terms. What ranges of differences can Patrick expect? How confident can he be? (Remember: we only have 250 days of data—that’s not a lot.)</li>
+<li><strong>Punchy and focused:</strong> Don’t bore Patrick with unnecessary analysis. Focus on what matters for his decision.</li>
+</ul>
 <p><strong>What we’re looking for:</strong> A report Patrick can read, understand, and act on. If he’s confused or bored, you’ve missed the mark.</p>
 </div>
 </div>
@@ -441,23 +490,23 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <h3 class="anchored" data-anchor-id="what-your-report-should-include">What Your Report Should Include</h3>
 <p>Your report should answer these questions in a clear, concise way:</p>
 <ol type="1">
-<li><strong>What does the data show?</strong>
+<li><p><strong>What does the data show?</strong></p>
 <ul>
 <li>Visualize all 250 data points showing productivity by shop and boss presence</li>
 <li>Which shops benefit most from Patrick’s presence? Which don’t?</li>
 </ul></li>
-<li><strong>What should Patrick do?</strong>
+<li><p><strong>What should Patrick do?</strong></p>
 <ul>
 <li>Clear, specific recommendations: Which shops should he prioritize? Why?</li>
 <li>What’s the potential financial impact? (Revenue or profit implications)</li>
 </ul></li>
-<li><strong>How confident can Patrick be?</strong>
+<li><p><strong>How confident can Patrick be?</strong></p>
 <ul>
 <li>Explain uncertainty in plain terms an auto-mechanic can understand</li>
 <li>What ranges of differences can he expect? (We only have 250 days—that’s not a huge sample)</li>
 <li>What could go wrong? What assumptions are you making?</li>
 </ul></li>
-<li><strong>What does the future look like?</strong>
+<li><p><strong>What does the future look like?</strong></p>
 <ul>
 <li>Show at least one visualization of projected outcomes under different scheduling scenarios</li>
 <li>Help Patrick see the potential impact of following your recommendations</li>
@@ -488,7 +537,9 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 </section>
 <section id="data-loading" class="level3">
 <h3 class="anchored" data-anchor-id="data-loading">Data Loading</h3>
-<p>You can load the data from the local file:</p>
+<p>The data file <code>carsFixed.csv</code> is included in your repository. Load it using pandas:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>carsDF <span class="op">=</span> pd.read_csv(<span class="st">"carsFixed.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="submission-checklist" class="level2">

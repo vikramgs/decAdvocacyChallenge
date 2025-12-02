@@ -15,6 +15,7 @@ execute:
 **Your Mission:** Create a concise, punchy Quarto document (aim for 1-5 printed pages) that analyzes historical productivity data from Patrick's auto shop network. Your report should give Patrick clear, actionable recommendations he can understand and use. Write it so an auto-mechanic can follow it—no jargon, no confusion, no boredom. Then render the document to HTML and deploy it via GitHub Pages.
 
 **Key Requirements:**
+
 - **Simplicity:** Patrick is an auto-mechanic, not a statistician. Write so he can understand.
 - **Conciseness:** 1-5 printed pages. Get to the point.
 - **Beautiful visualizations:** Show all 250 data points clearly.
@@ -28,6 +29,7 @@ Patrick runs a network of 5 auto repair shops. He's been tracking productivity d
 **The Core Question:** When and where should Patrick schedule his presence to maximize productivity and revenue?
 
 **Key Considerations:**
+
 - Patrick can only be at one shop per day
 - Different shops may respond differently to his presence
 - Revenue depends on number of cars fixed (assume a fixed price per car)
@@ -38,19 +40,21 @@ Patrick runs a network of 5 auto repair shops. He's been tracking productivity d
 ## 🎯 The Key Insight: Data-Driven Decision Making
 
 **The problem:** Patrick needs to make scheduling decisions based on data, not intuition. He needs to understand:
+
 - Which shops benefit most from his presence?
 - Are there patterns by shop that suggest different strategies?
 - What are the revenue and profit implications of different scheduling scenarios?
 - How confident can he be in these recommendations?
 
 **Why this matters:** Poor scheduling decisions can lead to:
+
 - Wasted time (Patrick at shops that don't need him)
 - Lost revenue (shops that need him but don't get him)
 
 **The connection:** This is a real-world decision problem where data analysis can directly impact business outcomes. Your job is to make the data tell a clear, actionable story.
 :::
 
-### The Data
+## The Data 📊
 
 The dataset contains 250 observations of daily productivity across 5 shops:
 
@@ -71,6 +75,7 @@ carsDF.head(10)
 ```
 
 **Data Dictionary:**
+
 - `observation`: Observation number (1-250)
 - `shopID`: Shop identifier (1-5)
 - `boss`: Binary indicator (0 = boss absent, 1 = boss present)
@@ -121,6 +126,7 @@ summary
 ## 💡 Why This Approach?
 
 **Benefits:**
+
 - **Real-world application:** You're solving an actual business problem
 - **Data-driven insights:** Learn to extract actionable insights from data
 - **Professional presentation:** Create a report that a real client would use
@@ -135,6 +141,7 @@ summary
 **This is a report for Patrick, an auto-mechanic, not a statistics professor.** Your job is to give him clear, actionable advice he can understand and use. Think of this as a brief consultation report—something he can read in 5 minutes and immediately know what to do.
 
 **Report Format:**
+
 - **Conciseness:** Aim for 1-5 printed pages. Patrick is busy—get to the point quickly.
 - **Simplicity:** Write so an auto-mechanic can understand. Avoid jargon. Use plain language.
 - **Delete All Challenge Instructions:** Once you've completed your analysis, remove all challenge instructions, setup guides, and grading rubrics from your final rendered HTML. The final report should contain only your analysis, visualizations, and recommendations—nothing else.
@@ -142,6 +149,7 @@ summary
 - **Show All Data Points:** When plotting historical data, display all 250 observations (not just summaries). Use transparency, jitter, or other techniques to handle overlapping points.
 
 **What makes a great report:**
+
 - **Beautiful visualizations:** Clean, clear charts that tell the story at a glance
 - **Logical recommendations:** Defensible advice based on the data, not speculation
 - **Confidence assessment:** Explain uncertainty in plain terms. What ranges of differences can Patrick expect? How confident can he be? (Remember: we only have 250 days of data—that's not a lot.)
@@ -154,20 +162,24 @@ summary
 
 Your report should answer these questions in a clear, concise way:
 
-1. **What does the data show?** 
+1. **What does the data show?**
+
    - Visualize all 250 data points showing productivity by shop and boss presence
    - Which shops benefit most from Patrick's presence? Which don't?
 
 2. **What should Patrick do?**
+
    - Clear, specific recommendations: Which shops should he prioritize? Why?
    - What's the potential financial impact? (Revenue or profit implications)
 
 3. **How confident can Patrick be?**
+
    - Explain uncertainty in plain terms an auto-mechanic can understand
    - What ranges of differences can he expect? (We only have 250 days—that's not a huge sample)
    - What could go wrong? What assumptions are you making?
 
 4. **What does the future look like?**
+
    - Show at least one visualization of projected outcomes under different scheduling scenarios
    - Help Patrick see the potential impact of following your recommendations
 
@@ -191,13 +203,10 @@ Your report should answer these questions in a clear, concise way:
 
 ### Data Loading
 
-You can load the data from the local file:
+The data file `carsFixed.csv` is included in your repository. Load it using pandas:
 
-```{python}
-#| echo: false
-#| include: false
+```python
 import pandas as pd
-
 carsDF = pd.read_csv("carsFixed.csv")
 ```
 
