@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -58,18 +58,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="index_files/libs/clipboard/clipboard.min.js"></script>
 <script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="index_files/libs/quarto-html/popper.min.js"></script>
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<link href="index_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
@@ -134,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-🎯 The Key Insight: Data-Driven Decision Making
+<span class="screen-reader-only">Important</span>🎯 The Key Insight: Data-Driven Decision Making
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -158,18 +159,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="the-data">The Data 📊</h2>
 <p>The dataset contains 250 observations of daily productivity across 5 shops:</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>carsDF.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>carsDF.head(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-data-overview" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Overview of the productivity data
 </figcaption>
 <div aria-describedby="tbl-data-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="185">
 <div>
 
 
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -181,70 +182,70 @@ Table&nbsp;1: Overview of the productivity data
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>1</td>
 <td>1</td>
 <td>0</td>
 <td>8</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>2</td>
 <td>2</td>
 <td>0</td>
 <td>22</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>3</td>
 <td>3</td>
 <td>0</td>
 <td>32</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>4</td>
 <td>4</td>
 <td>1</td>
 <td>64</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>5</td>
 <td>5</td>
 <td>0</td>
 <td>53</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
+<th data-quarto-table-cell-role="th">5</th>
 <td>6</td>
 <td>1</td>
 <td>1</td>
 <td>21</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
+<th data-quarto-table-cell-role="th">6</th>
 <td>7</td>
 <td>2</td>
 <td>0</td>
 <td>20</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
+<th data-quarto-table-cell-role="th">7</th>
 <td>8</td>
 <td>3</td>
 <td>0</td>
 <td>42</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
+<th data-quarto-table-cell-role="th">8</th>
 <td>9</td>
 <td>4</td>
 <td>0</td>
 <td>31</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
+<th data-quarto-table-cell-role="th">9</th>
 <td>10</td>
 <td>5</td>
 <td>0</td>
@@ -267,19 +268,19 @@ Table&nbsp;1: Overview of the productivity data
 <li><code>carsFixed</code>: Number of cars fixed that day</li>
 </ul>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> carsDF.groupby([<span class="st">'shopID'</span>, <span class="st">'boss'</span>])[<span class="st">'carsFixed'</span>].agg([<span class="st">'count'</span>, <span class="st">'mean'</span>, <span class="st">'std'</span>, <span class="st">'min'</span>, <span class="st">'max'</span>]).<span class="bu">round</span>(<span class="dv">2</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> carsDF.groupby([<span class="st">'shopID'</span>, <span class="st">'boss'</span>])[<span class="st">'carsFixed'</span>].agg([<span class="st">'count'</span>, <span class="st">'mean'</span>, <span class="st">'std'</span>, <span class="st">'min'</span>, <span class="st">'max'</span>]).<span class="bu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-data-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="3">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Summary statistics by shop and boss presence
 </figcaption>
 <div aria-describedby="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="186">
 <div>
 
 
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -302,8 +303,8 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">1</td>
-<td data-quarto-table-cell-role="th">0</td>
+<th rowspan="2" data-quarto-table-cell-role="th" data-valign="top">1</th>
+<th data-quarto-table-cell-role="th">0</th>
 <td>40</td>
 <td>11.05</td>
 <td>2.93</td>
@@ -311,7 +312,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>17</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>10</td>
 <td>18.00</td>
 <td>3.13</td>
@@ -319,8 +320,8 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>23</td>
 </tr>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">2</td>
-<td data-quarto-table-cell-role="th">0</td>
+<th rowspan="2" data-quarto-table-cell-role="th" data-valign="top">2</th>
+<th data-quarto-table-cell-role="th">0</th>
 <td>45</td>
 <td>22.13</td>
 <td>4.82</td>
@@ -328,7 +329,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>35</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>5</td>
 <td>32.20</td>
 <td>2.59</td>
@@ -336,8 +337,8 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>35</td>
 </tr>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">3</td>
-<td data-quarto-table-cell-role="th">0</td>
+<th rowspan="2" data-quarto-table-cell-role="th" data-valign="top">3</th>
+<th data-quarto-table-cell-role="th">0</th>
 <td>35</td>
 <td>32.46</td>
 <td>5.59</td>
@@ -345,7 +346,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>49</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>15</td>
 <td>35.40</td>
 <td>5.00</td>
@@ -353,8 +354,8 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>44</td>
 </tr>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">4</td>
-<td data-quarto-table-cell-role="th">0</td>
+<th rowspan="2" data-quarto-table-cell-role="th" data-valign="top">4</th>
+<th data-quarto-table-cell-role="th">0</th>
 <td>45</td>
 <td>37.02</td>
 <td>5.61</td>
@@ -362,7 +363,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>51</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>5</td>
 <td>49.80</td>
 <td>10.08</td>
@@ -370,8 +371,8 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>64</td>
 </tr>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">5</td>
-<td data-quarto-table-cell-role="th">0</td>
+<th rowspan="2" data-quarto-table-cell-role="th" data-valign="top">5</th>
+<th data-quarto-table-cell-role="th">0</th>
 <td>35</td>
 <td>45.51</td>
 <td>7.24</td>
@@ -379,7 +380,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>60</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>15</td>
 <td>53.73</td>
 <td>5.31</td>
@@ -425,7 +426,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-📁 Quick Start
+<span class="screen-reader-only">Important</span>📁 Quick Start
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -441,7 +442,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-💡 Why This Approach?
+<span class="screen-reader-only">Tip</span>💡 Why This Approach?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -463,7 +464,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-📊 What You’re Really Being Graded On
+<span class="screen-reader-only">Important</span>📊 What You’re Really Being Graded On
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -495,23 +496,414 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <li>Visualize all 250 data points showing productivity by shop and boss presence</li>
 <li>Which shops benefit most from Patrick’s presence? Which don’t?</li>
 </ul></li>
+</ol>
+<div id="cell-fig-all-data-points" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div id="fig-all-data-points" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-all-data-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-all-data-points-output-1.png" width="1526" height="661" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-all-data-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: All 250 days of productivity data: Cars fixed per day by shop and boss presence
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-fig-shop-benefits" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div id="fig-shop-benefits" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-shop-benefits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-shop-benefits-output-1.png" width="1526" height="661" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-shop-benefits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Impact of Patrick’s presence: Average productivity difference by shop
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+============================================================
+SUMMARY: Which Shops Benefit Most from Patrick's Presence?
+============================================================
+
+Shop 4: BENEFITS
+  - Average when Patrick is absent: 37.0 cars/day
+  - Average when Patrick is present: 49.8 cars/day
+  - Difference: +12.8 cars/day
+  - Data points: 45 days absent, 5 days present
+
+Shop 2: BENEFITS
+  - Average when Patrick is absent: 22.1 cars/day
+  - Average when Patrick is present: 32.2 cars/day
+  - Difference: +10.1 cars/day
+  - Data points: 45 days absent, 5 days present
+
+Shop 5: BENEFITS
+  - Average when Patrick is absent: 45.5 cars/day
+  - Average when Patrick is present: 53.7 cars/day
+  - Difference: +8.2 cars/day
+  - Data points: 35 days absent, 15 days present
+
+Shop 1: BENEFITS
+  - Average when Patrick is absent: 11.1 cars/day
+  - Average when Patrick is present: 18.0 cars/day
+  - Difference: +6.9 cars/day
+  - Data points: 40 days absent, 10 days present
+
+Shop 3: BENEFITS
+  - Average when Patrick is absent: 32.5 cars/day
+  - Average when Patrick is present: 35.4 cars/day
+  - Difference: +2.9 cars/day
+  - Data points: 35 days absent, 15 days present
+============================================================</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
 <li><p><strong>What should Patrick do?</strong></p>
 <ul>
 <li>Clear, specific recommendations: Which shops should he prioritize? Why?</li>
 <li>What’s the potential financial impact? (Revenue or profit implications)</li>
 </ul></li>
+</ol>
+<div id="cell-fig-priority-recommendations" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div id="fig-priority-recommendations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-priority-recommendations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-priority-recommendations-output-1.png" width="1523" height="661" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-priority-recommendations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Shop Priority Ranking: Where Patrick should focus his time for maximum impact
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+======================================================================
+RECOMMENDATIONS: Which Shops Should Patrick Prioritize?
+======================================================================
+
+#1 PRIORITY: Shop 4
+   Why: When Patrick is present, this shop fixes 12.8 MORE cars per day
+   Opportunity: 45 days without Patrick = potential for improvement
+   Current performance: 37.0 cars/day → 49.8 cars/day with Patrick
+
+#2 PRIORITY: Shop 2
+   Why: When Patrick is present, this shop fixes 10.1 MORE cars per day
+   Opportunity: 45 days without Patrick = potential for improvement
+   Current performance: 22.1 cars/day → 32.2 cars/day with Patrick
+
+#3 PRIORITY: Shop 5
+   Why: When Patrick is present, this shop fixes 8.2 MORE cars per day
+   Opportunity: 35 days without Patrick = potential for improvement
+   Current performance: 45.5 cars/day → 53.7 cars/day with Patrick
+
+#4 PRIORITY: Shop 1
+   Why: When Patrick is present, this shop fixes 6.9 MORE cars per day
+   Opportunity: 40 days without Patrick = potential for improvement
+   Current performance: 11.1 cars/day → 18.0 cars/day with Patrick
+
+#5 PRIORITY: Shop 3
+   Why: When Patrick is present, this shop fixes 2.9 MORE cars per day
+   Opportunity: 35 days without Patrick = potential for improvement
+   Current performance: 32.5 cars/day → 35.4 cars/day with Patrick
+======================================================================</code></pre>
+</div>
+</div>
+<div id="cell-fig-financial-impact" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div id="fig-financial-impact" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-financial-impact-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-financial-impact-output-1.png" width="1526" height="661" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-financial-impact-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Financial Impact Analysis: Revenue implications of different scheduling strategies
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+======================================================================
+FINANCIAL IMPACT ANALYSIS
+======================================================================
+
+Assumptions:
+  - Price per car fixed: $150
+  - Analysis period: 250 days
+
+Current Revenue (Actual): $1,164,000.00
+
+OPTIMAL STRATEGY: Focus on Shop 4
+  - Projected Revenue: $1,207,160.71
+  - Revenue Increase: $43,160.71 (3.71%)
+  - Additional Cars Fixed: 288 cars
+
+ANNUAL PROJECTION (365 days):
+  - Current: $1,699,440.00
+  - Optimal: $1,762,454.64
+  - Potential Increase: $63,014.64
+======================================================================</code></pre>
+</div>
+</div>
+<div id="cell-fig-worst-vs-optimal" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div id="fig-worst-vs-optimal" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-worst-vs-optimal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-worst-vs-optimal-output-1.png" width="1526" height="1333" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-worst-vs-optimal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: The Cost of Poor Scheduling: Comparing optimal vs worst shop focus
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+======================================================================
+COMPARISON: Optimal vs Worst Shop Focus
+======================================================================
+
+BEST STRATEGY: Focus on Shop 4
+  - Revenue: $1,207,160.71
+  - Change from current: $+43,160.71 (+3.71%)
+  - Annual projection: $1,762,454.64
+
+WORST STRATEGY: Focus on Shop 3
+  - Revenue: $1,133,398.81
+  - Change from current: $-30,601.19 (-2.63%)
+  - Annual projection: $1,654,762.26
+  - Impact when Patrick present: +2.9 cars/day
+
+OPPORTUNITY COST (Choosing Worst vs Best):
+  - Revenue lost: $73,761.90
+  - Percentage of current revenue: 6.34%
+  - Annual opportunity cost: $107,692.38
+  - Equivalent to losing: 492 cars over 250 days
+======================================================================</code></pre>
+</div>
+</div>
+<div id="financial-conclusion" class="cell" data-execution_count="9">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>💰 Financial Impact Summary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<section id="best-strategy-focus-on-shop-4" class="level3">
+<h3 class="anchored" data-anchor-id="best-strategy-focus-on-shop-4">Best Strategy: Focus on Shop 4</h3>
+<ul>
+<li><strong>Revenue Gain:</strong> +$43,161 over 250 days (3.7% increase)</li>
+<li><strong>Annual Projection:</strong> +$63,015 per year</li>
+<li><strong>Productivity Impact:</strong> 288 additional cars fixed</li>
+</ul>
+</section>
+<section id="worst-strategy-focus-on-shop-3" class="level3">
+<h3 class="anchored" data-anchor-id="worst-strategy-focus-on-shop-3">Worst Strategy: Focus on Shop 3</h3>
+<ul>
+<li><strong>Revenue Loss:</strong> -$30,601 over 250 days (2.6% decrease)</li>
+<li><strong>Annual Projection:</strong> -$44,678 per year</li>
+<li><strong>Productivity Impact:</strong> 204 fewer cars fixed</li>
+</ul>
+</section>
+<section id="opportunity-cost-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="opportunity-cost-analysis">Opportunity Cost Analysis</h3>
+<ul>
+<li><strong>Best vs Worst Difference:</strong> $73,762 in revenue (6.3% of current revenue)</li>
+<li><strong>Annual Opportunity Cost:</strong> $107,692 per year</li>
+<li><strong>Equivalent Impact:</strong> 492 cars over 250 days</li>
+</ul>
+</section>
+<section id="key-takeaway" class="level3">
+<h3 class="anchored" data-anchor-id="key-takeaway">Key Takeaway</h3>
+<ul>
+<li><strong>Right Decision:</strong> +$43,161 additional revenue</li>
+<li><strong>Wrong Decision:</strong> -$30,601 lost revenue</li>
+<li><strong>Decision Value:</strong> $73,762 at stake</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
 <li><p><strong>How confident can Patrick be?</strong></p>
 <ul>
 <li>Explain uncertainty in plain terms an auto-mechanic can understand</li>
 <li>What ranges of differences can he expect? (We only have 250 days—that’s not a huge sample)</li>
 <li>What could go wrong? What assumptions are you making?</li>
 </ul></li>
+</ol>
+<div id="cell-fig-confidence-intervals" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<div id="fig-confidence-intervals" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-confidence-intervals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-confidence-intervals-output-1.png" width="1525" height="661" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-confidence-intervals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Confidence Ranges: What Patrick can realistically expect
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+======================================================================
+CONFIDENCE ANALYSIS: What Can Patrick Realistically Expect?
+======================================================================
+
+We have 250 days of data - that's about 8 months. Here's what that means:
+
+For each shop, we calculated a 95% confidence range.
+This means: If we repeated this 100 times, 95 times the true impact
+would fall within this range. Think of it like a weather forecast -
+we're 95% confident the impact is somewhere in this range.
+
+
+Shop 1:
+  - Best estimate: +6.9 cars/day difference
+  - 95% Confidence Range: +4.5 to +9.4 cars/day
+  - Uncertainty: ±2.5 cars/day
+  - Data: 40 days absent, 10 days present
+  - Interpretation: We're confident this shop BENEFITS from Patrick
+
+Shop 2:
+  - Best estimate: +10.1 cars/day difference
+  - 95% Confidence Range: +6.3 to +13.8 cars/day
+  - Uncertainty: ±3.8 cars/day
+  - Data: 45 days absent, 5 days present
+  - Interpretation: We're confident this shop BENEFITS from Patrick
+
+Shop 3:
+  - Best estimate: +2.9 cars/day difference
+  - 95% Confidence Range: -0.5 to +6.4 cars/day
+  - Uncertainty: ±3.4 cars/day
+  - Data: 35 days absent, 15 days present
+  - Interpretation: UNCERTAIN - could go either way
+
+Shop 4:
+  - Best estimate: +12.8 cars/day difference
+  - 95% Confidence Range: +0.0 to +25.5 cars/day
+  - Uncertainty: ±12.7 cars/day
+  - Data: 45 days absent, 5 days present
+  - Interpretation: We're confident this shop BENEFITS from Patrick
+
+Shop 5:
+  - Best estimate: +8.2 cars/day difference
+  - 95% Confidence Range: +4.3 to +12.2 cars/day
+  - Uncertainty: ±3.9 cars/day
+  - Data: 35 days absent, 15 days present
+  - Interpretation: We're confident this shop BENEFITS from Patrick
+
+======================================================================</code></pre>
+</div>
+</div>
+<div id="fig-uncertainty-explanation" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="11">
+<figure class="quarto-float quarto-float-fig figure">
+<section id="understanding-the-numbers-plain-english-explanation" class="level3" aria-describedby="fig-uncertainty-explanation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<h3 class="anchored" data-anchor-id="understanding-the-numbers-plain-english-explanation">Understanding the Numbers: Plain English Explanation</h3>
+<p><strong>What does “95% confidence” mean?</strong> - Think of it like a weather forecast saying “80% chance of rain” - We’re 95% confident the true impact falls within the range shown - This means there’s a 5% chance we’re wrong - but that’s pretty unlikely</p>
+<p><strong>Why is there uncertainty?</strong> - We only have 250 days of data (about 8 months) - Some shops have fewer days with Patrick present (less data = more uncertainty) - Daily productivity varies - some days are busier than others - The range accounts for this natural variation</p>
+<p><strong>What ranges can Patrick expect?</strong> - The confidence intervals show the BEST and WORST case scenarios - For example, if we say Shop X has an impact of +5 cars/day with a range of +2 to +8: - Best case: Patrick adds 8 cars/day - Worst case: Patrick adds 2 cars/day - Most likely: Patrick adds 5 cars/day - Patrick should plan for the range, not just the best estimate</p>
+<p><strong>What could go wrong?</strong> 1. <strong>Seasonal Effects:</strong> Our 250 days might not represent a full year - Busy seasons vs slow seasons could change the results - Solution: Monitor results and adjust if patterns change</p>
+<ol start="2" type="1">
+<li><strong>Small Sample Sizes:</strong> Some shops have very few days with Patrick
+<ul>
+<li>Less data = less confidence in the numbers</li>
+<li>Solution: Focus on shops with more data first</li>
+</ul></li>
+<li><strong>External Factors:</strong> Things we didn’t measure could affect results
+<ul>
+<li>Weather, local events, staff changes, etc.</li>
+<li>Solution: Track other factors that might matter</li>
+</ul></li>
+<li><strong>Future Changes:</strong> Past performance doesn’t guarantee future results
+<ul>
+<li>Shops might respond differently over time</li>
+<li>Solution: Start with recommendations but monitor and adapt</li>
+</ul></li>
+</ol>
+<p><strong>What assumptions are we making?</strong> - <strong>Fixed price per car:</strong> We assume $150 per car (adjust if different) - <strong>Consistent shop behavior:</strong> We assume shops behave the same way going forward - <strong>No other factors:</strong> We assume Patrick’s presence is the main difference - <strong>Data quality:</strong> We assume the data accurately reflects reality</p>
+</section>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uncertainty-explanation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: <strong>Bottom Line for Patrick:</strong> - The recommendations are based on solid data, but nothing is 100% certain - Start with the recommended strategy, but track results - If results don’t match expectations after a few months, reassess - The confidence ranges show realistic expectations - plan for the range, not just the best case
+</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
 <li><p><strong>What does the future look like?</strong></p>
 <ul>
 <li>Show at least one visualization of projected outcomes under different scheduling scenarios</li>
 <li>Help Patrick see the potential impact of following your recommendations</li>
 </ul></li>
 </ol>
+<div id="cell-fig-future-projections" class="cell" data-execution_count="12">
+<div class="cell-output cell-output-display">
+<div id="fig-future-projections" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-future-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-future-projections-output-1.png" width="1525" height="1333" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-future-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Future Projections: What happens under different scheduling strategies?
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+======================================================================
+FUTURE PROJECTIONS: What Happens If Patrick Follows Recommendations?
+======================================================================
+
+Projected outcomes under different scheduling strategies:
+
+
+1 Month (30 days):
+  Current Strategy:     $139,680
+  Best Shop Strategy:   $144,859 (+$5,179)
+  Worst Shop Strategy:  $136,008 (-3,672)
+  Difference (Best-Worst): $8,851
+
+3 Months (90 days):
+  Current Strategy:     $419,040
+  Best Shop Strategy:   $434,578 (+$15,538)
+  Worst Shop Strategy:  $408,024 (-11,016)
+  Difference (Best-Worst): $26,554
+
+6 Months (180 days):
+  Current Strategy:     $838,080
+  Best Shop Strategy:   $869,156 (+$31,076)
+  Worst Shop Strategy:  $816,047 (-22,033)
+  Difference (Best-Worst): $53,109
+
+1 Year (365 days):
+  Current Strategy:     $1,699,440
+  Best Shop Strategy:   $1,762,455 (+$63,015)
+  Worst Shop Strategy:  $1,654,762 (-44,678)
+  Difference (Best-Worst): $107,692
+
+======================================================================
+KEY INSIGHT:
+If Patrick follows the recommended strategy (focus on Shop 4):
+  - After 3 months:  +$15,538 additional revenue
+  - After 6 months:  +$31,076 additional revenue
+  - After 1 year:    +$63,015 additional revenue
+  - That's 420 more cars fixed per year!
+======================================================================</code></pre>
+</div>
+</div>
 <p><strong>Remember:</strong> Less is more. A focused, punchy report that Patrick can understand and act on is better than a long, complex analysis that confuses him.</p>
 </section>
 </section>
@@ -538,8 +930,8 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <section id="data-loading" class="level3">
 <h3 class="anchored" data-anchor-id="data-loading">Data Loading</h3>
 <p>The data file <code>carsFixed.csv</code> is included in your repository. Load it using pandas:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>carsDF <span class="op">=</span> pd.read_csv(<span class="st">"carsFixed.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>carsDF <span class="op">=</span> pd.read_csv(<span class="st">"carsFixed.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="submission-checklist" class="level2">
@@ -633,13 +1025,14 @@ Table&nbsp;2: Summary statistics by shop and boss presence
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
